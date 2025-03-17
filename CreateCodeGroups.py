@@ -6,7 +6,8 @@ from Autodesk.DesignScript.Geometry import *
 clr.AddReference(r"C:\Program Files\Autodesk\Robot Structural Analysis Professional 2024\Dynamo\2.17\Rsa\package\SAD\bin\RSA\interop.RobotOM.dll")
 from RobotOM import *
 # The inputs to this node will be stored as a list in the IN variables.
-group_data = IN[1]
+group_data = IN[1] # codegroups described in excel
+
 if IN[0]:
     try:
         # Start Robot Application
