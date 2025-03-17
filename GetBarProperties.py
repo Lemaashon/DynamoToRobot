@@ -98,5 +98,5 @@ def get_bar_properties():
         return f"Error: {str(e)}"
 
 # Run function and output results to Dynamo
-if IN[0]:
+if IN[0]:#Boolean
     OUT = get_bar_properties()
