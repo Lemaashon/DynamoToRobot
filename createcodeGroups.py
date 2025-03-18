@@ -28,6 +28,8 @@ if IN[0]:
         RDmServer.Mode = 1  # Steel design mode
         RDmStream = RDmServer.Connection.GetStream()
         RDmGrps = RDmServer.GroupsService
+        
+        #Delete any existing groups
         group_ids = [RDmGrps.Get(i).UsrNo for i in range(1, RDmGrps.Count + 1)]
         for group_id in reversed(group_ids):
             try:
