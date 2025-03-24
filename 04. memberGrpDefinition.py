@@ -9,7 +9,7 @@ structure = project.Structure
 
 # Inputs: List of member IDs and the predefined label name in Robot
 member_ids = [145,146];  # List of member IDS
-label_name = "0.95l"  # Member type name
+label_name = "0.95l"  # Member type name defined in Robot
 
 # Check if the label exists
 if structure.Labels.Exist(IRobotLabelType.I_LT_MEMBER_TYPE, label_name):
