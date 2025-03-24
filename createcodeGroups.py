@@ -5,7 +5,7 @@ clr.AddReference('ProtoGeometry')
 from Autodesk.DesignScript.Geometry import *
 clr.AddReference(r"C:\Program Files\Autodesk\Robot Structural Analysis Professional 2024\Dynamo\2.17\Rsa\package\SAD\bin\RSA\interop.RobotOM.dll")
 from RobotOM import *
-# The inputs to this node will be stored as a list in the IN variables.
+# Inputs.
 group_data = IN[1] # codegroups described in excel
 
 if IN[0]:
@@ -20,9 +20,6 @@ if IN[0]:
         
         project = application.Project
         structure = project.Structure
-  
-
-                  
         
         RDmServer = IRDimServer(application.Kernel.GetExtension("RDimServer"))
         RDmServer.Mode = 1  # Steel design mode
@@ -59,18 +56,13 @@ if IN[0]:
         #RDmStream.WriteText(GROUP)  # Assign bars 1, 2, 3 to this group
         #RDmGrp1.SetMembList(RDmStream)
         
-        #RDmGrps.Save(RDmGrp1)
-        
+        #RDmGrps.Save(RDmGrp1) 
         #selection = structure.Selections.Create(IRobotObjectType.I_OT_BAR)
         #selection.FromText("all")
-        #selectedBars = IRobotCollection(structure.Bars.GetMany(selection))
-        
-        
+        #selectedBars = IRobotCollection(structure.Bars.GetMany(selection))     
         #bars = IRobotCollection(structure.Bars.GetAll())
         
             #section_data = application.Project.Preferences.Sections.Get(section_name)
-
-            
 
             #section_label = structure.Labels.Sections.Get(br.SectionID)  # Get assigned section label
             #section_label = structure.Labels.Get(I_LT_BAR)  # Get assigned section label
@@ -88,11 +80,7 @@ if IN[0]:
             #bar = enumerator.Current
             #barsList.append(bar)
         
-        
-        
         #listBarNumbers = []
-
-       
         OUT = RDmGrps
         #OUT = dir(br.GetLabelName(IRobotLabelType.))
     except Exception as e:
