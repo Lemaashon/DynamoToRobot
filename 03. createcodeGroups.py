@@ -32,7 +32,7 @@ if IN[0]:
             try:
                 RDmGrps.Delete(group_id)  # Delete the group
             except Exception as e:
-                OUT = f"❌ Error deleting Steel Group {group_id}: {e}"
+                OUT = f"Error deleting Steel Group {group_id}: {e}"
                 
         for group_name, bar_list in group_data.items():
             RDmStream = RDmServer.Connection.GetStream()  # Get a new stream
